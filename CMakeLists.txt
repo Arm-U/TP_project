@@ -1,18 +1,24 @@
 cmake_minimum_required(VERSION 2.8)
+project(test CXX)
 
+set(SOURCES
+	Units/Unit.cpp
+	Units/Warrior.cpp
+	Units/Archer.cpp
+	Units/Swordsman.cpp
+	Factories/UnitFactory.cpp
+	Factories/EnglandUnitFactory.cpp
+	Factories/FranceUnitFactory.cpp)
 
-project(test)
+set(HEADERS 
+	Units/Unit.h 
+	Units/Warrior.h 
+	Units/Archer.h 
+	Units/Swordsman.h 
+	Factories/UnitFactory.h 
+	Factories/EnglandUnitFactory.h 
+	Factories/FranceUnitFactory.h)
 
-add_executable(main main.cpp)
+add_executable(mainfile ${SOURCES} ${HEADERS}  main.cpp)
 
-include_directories(Units)
-
-include_directories(Factories)
-
-add_subdirectory(Units)
-
-add_subdirectory(Factories)
-
-set(ADDITIONAL_LIBRARIES unit abstract)
-
-target_link_libraries(main ${ADDITIONAL_LIBRARIES})
+target_compile_options(mainfile PUBLIC -std=c++11 -fpermissive -w -Wall -Wextra)
