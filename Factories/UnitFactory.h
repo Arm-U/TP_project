@@ -8,6 +8,7 @@
 class UnitFactory {
 public:
 	UnitFactory() = default;
+	~UnitFactory() = default;
 
 	virtual std::shared_ptr<Warrior> CreateWarrior() = 0;
 	virtual std::shared_ptr<Archer> CreateArcher() = 0;
