@@ -10,7 +10,7 @@ public:
 	UnitFactory() = default;
 	~UnitFactory() = default;
 
-	virtual std::shared_ptr<Warrior> CreateWarrior() = 0;
-	virtual std::shared_ptr<Archer> CreateArcher() = 0;
-	virtual std::shared_ptr<Swordsman> CreateSwordsman() = 0;
+	virtual std::shared_ptr<Unit> CreateWarrior() = 0;
+	virtual std::shared_ptr<Unit> CreateArcher() = 0;
+	virtual std::shared_ptr<Unit> CreateSwordsman() = 0;
 };

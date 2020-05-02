@@ -4,7 +4,7 @@
 
 class EnglandUnitFactory : public UnitFactory {
 public:
-	std::shared_ptr<Warrior> CreateWarrior() override;
-	std::shared_ptr<Archer> CreateArcher() override;
-	std::shared_ptr<Swordsman> CreateSwordsman() override;
+	std::shared_ptr<Unit> CreateWarrior() override;
+	std::shared_ptr<Unit> CreateArcher() override;
+	std::shared_ptr<Unit> CreateSwordsman() override;
 };
