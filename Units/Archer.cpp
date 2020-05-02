@@ -1,9 +1,8 @@
 #include "Archer.h"
-#include <algorithm>
 
-void Archer::turn(Unit& enemy) {
-	enemy.setCurHealth(std::max(enemy.getCurHealth() - attack, 0));
-	if (!enemy.getCurHealth())
+void Archer::turn(std::shared_ptr<Unit> enemy) {
+	enemy->setCurHealth(std::max(enemy->getCurHealth() - attack, 0));
+	if (!enemy->getCurHealth())
 		++level;
 }
 

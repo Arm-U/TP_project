@@ -1,10 +1,9 @@
 #include "Warrior.h"
-#include <algorithm>
 
-void Warrior::turn(Unit& enemy) {
-	enemy.setCurHealth(std::max(enemy.getCurHealth() - attack, 0));
-	if (enemy.getCurHealth())
-		cur_health = std::max(getCurHealth() - enemy.getAttack(), 0);
+void Warrior::turn(std::shared_ptr<Unit> enemy) {
+	enemy->setCurHealth(std::max(enemy->getCurHealth() - attack, 0));
+	if (enemy->getCurHealth())
+		cur_health = std::max(getCurHealth() - enemy->getAttack(), 0);
 	else
 		level += 1;
 }

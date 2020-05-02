@@ -1,14 +1,13 @@
 #include "Swordsman.h"
-#include <algorithm>
 
-void Swordsman::turn(Unit& enemy) {
-	enemy.setCurHealth(std::max(enemy.getCurHealth() - attack, 0));
-	if (enemy.getCurHealth()) {
-		cur_health = std::max(getCurHealth() - enemy.getAttack(), 0);
+void Swordsman::turn(std::shared_ptr<Unit> enemy) {
+	enemy->setCurHealth(std::max(enemy->getCurHealth() - attack, 0));
+	if (enemy->getCurHealth()) {
+		cur_health = std::max(getCurHealth() - enemy->getAttack(), 0);
 		if (cur_health) {
-			enemy.setCurHealth(std::max(enemy.getCurHealth() - attack, 0));
-			if (enemy.getCurHealth())
-				cur_health = std::max(getCurHealth() - enemy.getAttack(), 0);
+			enemy->setCurHealth(std::max(enemy->getCurHealth() - attack, 0));
+			if (enemy->getCurHealth())
+				cur_health = std::max(getCurHealth() - enemy->getAttack(), 0);
 			else
 				level += 1;
 		}

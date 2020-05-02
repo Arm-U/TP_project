@@ -1,4 +1,6 @@
 #pragma once
+#include <memory>
+#include <algorithm>
 
 class Unit {
 public:
@@ -14,7 +16,7 @@ public:
 	void setMaxHealth(const int& new_health);
 	void setCost(const int& new_cost);
 
-	virtual void turn(Unit& enemy) = 0;
+	virtual void turn(std::shared_ptr<Unit> enemy) = 0;
 	virtual void upgrade(const int& cur_level) = 0;
 
 protected:

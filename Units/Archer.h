@@ -4,6 +4,6 @@
 
 class Archer : public Unit {
 public:
-	void turn(Unit& enemy) final;
+	void turn(std::shared_ptr<Unit> enemy) final;
 	void upgrade(const int& cur_level) final;
 };
