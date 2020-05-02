@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Factories/EnglandUnitFactory.h"
+#include "Factories/FranceUnitFactory.h"
 
 int main() {
 	std::shared_ptr<UnitFactory> england = std::make_shared<EnglandUnitFactory>();
@@ -10,6 +11,27 @@ int main() {
 	std::cout << warrior1->getCurHealth() << "\n";
 	std::cout << warrior1->getCost() << "\n";
 	std::cout << warrior1->getLevel() << "\n";
+
+	std::shared_ptr<UnitFactory> france = std::make_shared<FranceUnitFactory>();
+
+	std::shared_ptr<Unit> fran_archer = france->CreateArcher();
+
+	std::cout << fran_archer->getAttack() << "\n";
+	std::cout << fran_archer->getCurHealth() << "\n";
+	std::cout << fran_archer->getCost() << "\n";
+	std::cout << fran_archer->getLevel() << "\n";
+
+	fran_archer->turn(warrior1);
+
+	std::cout << warrior1->getAttack() << "\n";
+	std::cout << warrior1->getCurHealth() << "\n";
+	std::cout << warrior1->getCost() << "\n";
+	std::cout << warrior1->getLevel() << "\n";
+
+	std::cout << fran_archer->getAttack() << "\n";
+	std::cout << fran_archer->getCurHealth() << "\n";
+	std::cout << fran_archer->getCost() << "\n";
+	std::cout << fran_archer->getLevel() << "\n";
 
 	return 0;
 }
