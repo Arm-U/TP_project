@@ -10,7 +10,11 @@ set(SOURCES
 	Factories/EnglandUnitFactory.cpp
 	Factories/FranceUnitFactory.cpp
 	Units/CompositeUnit.cpp
-	Client/ClientArmy.cpp)
+	Client/ClientArmy.cpp
+	States/State.cpp
+	States/Context.cpp
+	States/MartialState.cpp
+	States/EconomicState.cpp)
 
 set(HEADERS 
 	Units/Unit.h 
@@ -21,7 +25,11 @@ set(HEADERS
 	Factories/EnglandUnitFactory.h 
 	Factories/FranceUnitFactory.h
 	Units/CompositeUnit.h
-	Client/ClientArmy.h)
+	Client/ClientArmy.h
+	States/State.h
+	States/Context.h
+	States/MartialState.h
+	States/EconomicState.h)
 
 add_executable(mainfile ${SOURCES} ${HEADERS}  main.cpp)
 

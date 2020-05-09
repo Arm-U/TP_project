@@ -21,10 +21,14 @@ void ClientArmy::setFactory(std::shared_ptr<UnitFactory> new_factory) {
 	factory = new_factory;
 }
 
-void ClientArmy::setPoints(int new_points) {
-	points = new_points;
-}
-
 int ClientArmy::getPoints() const {
 	return points;
+}
+
+void ClientArmy::increasePoints(int new_points) {
+	points += new_points;
+}
+
+void ClientArmy::setPoints(int new_points) {
+	points = new_points;
 }

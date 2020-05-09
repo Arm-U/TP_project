@@ -31,3 +31,31 @@ int CompositeUnit::getCost() const {
 	}
 	return cost;
 }
+
+void CompositeUnit::upgrade() {
+	for (auto& unit : squad) {
+		unit->upgrade();
+	}
+}
+
+void CompositeUnit::turn(std::shared_ptr<Unit> enemy) {
+	for (auto& unit : squad) {
+		unit->turn(enemy);
+	}
+}
+
+void CompositeUnit::healthRecovery() {
+	for (auto& unit : squad) {
+		unit->healthRecovery();
+	}
+}
+
+void CompositeUnit::levelUp() {
+	for (auto& unit : squad) {
+		unit->levelUp();
+	}
+}
+
+std::vector<std::shared_ptr<Unit>> CompositeUnit::getSquad() const {
+	return squad;
+}

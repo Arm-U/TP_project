@@ -6,8 +6,8 @@ void Archer::turn(std::shared_ptr<Unit> enemy) {
 		++level;
 }
 
-void Archer::upgrade(const int& cur_level) {
-	if (!cur_level || cur_level % 3 != 0 || cur_level > 9)
+void Archer::upgrade() {
+	if (!level || level % 3 != 0 || level > 9)
 		return;
 	attack += 3;
 	max_health += 3;

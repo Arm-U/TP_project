@@ -9,6 +9,7 @@ public:
 	std::shared_ptr<CompositeUnit> createLegion(int wNum, int aNum, int sNum);
 
 	void setFactory(std::shared_ptr<UnitFactory> new_factory);
+	void increasePoints(int new_points);
 	void setPoints(int new_points);
 
 	int getPoints() const;

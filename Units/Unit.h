@@ -1,6 +1,7 @@
 #pragma once
 #include <memory>
 #include <algorithm>
+#include <vector>
 
 class Unit {
 public:
@@ -17,10 +18,15 @@ public:
 	void setCost(const int& new_cost);
 
 	virtual void turn(std::shared_ptr<Unit> enemy) {}
-	virtual void upgrade(const int& cur_level) {}
+	virtual void upgrade() {}
 
 	virtual void add_unit(std::shared_ptr<Unit> enemy) {}
-	virtual void remove_unit(std::shared_ptr<Unit> enemy) {}
+	virtual void erase_unit(std::shared_ptr<Unit> enemy) {}
+
+	virtual void healthRecovery();
+	virtual void levelUp();
+
+	virtual std::vector<std::shared_ptr<Unit>> getSquad() const {}
 
 protected:
 	int attack;

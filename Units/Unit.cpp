@@ -31,3 +31,11 @@ void Unit::setMaxHealth(const int& new_health) {
 void Unit::setCost(const int& new_cost) {
 	cost = new_cost;
 }
+
+void Unit::healthRecovery() {
+	cur_health = max_health;
+}
+
+void Unit::levelUp() {
+	++level;
+}

@@ -16,8 +16,8 @@ void Swordsman::turn(std::shared_ptr<Unit> enemy) {
 		level += 1;
 }
 
-void Swordsman::upgrade(const int& cur_level) {
-	if (!cur_level || cur_level % 5 != 0 || cur_level > 15)
+void Swordsman::upgrade() {
+	if (!level || level % 5 != 0 || level > 15)
 		return;
 	attack += 5;
 	max_health += 10;

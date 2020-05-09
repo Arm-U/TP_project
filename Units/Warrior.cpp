@@ -8,8 +8,8 @@ void Warrior::turn(std::shared_ptr<Unit> enemy) {
 		level += 1;
 }
 
-void Warrior::upgrade(const int& cur_level) {
-	if (!cur_level || cur_level % 2 != 0 || cur_level > 6)
+void Warrior::upgrade() {
+	if (!level || level % 2 != 0 || level > 6)
 		return;
 	attack += 2;
 	max_health += 5;
