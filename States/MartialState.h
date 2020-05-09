@@ -13,5 +13,5 @@ public:
 	void upgrade(Context* new_context) override;
 	void recovery(Context* new_context) override;
 
-	bool isEconomic() const;
+	bool isEconomic() const override;
 };
