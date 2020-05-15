@@ -17,10 +17,8 @@ public:
     void Request3();
     void Request4();
 
-    void setArmy(std::shared_ptr<CompositeUnit> new_army);
-    std::shared_ptr<CompositeUnit> getArmy() const;
+    std::shared_ptr<CompositeUnit> army;
 
 private:
     std::shared_ptr<State> state_;
-    std::shared_ptr<CompositeUnit> army;
 };

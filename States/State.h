@@ -2,6 +2,7 @@
 
 #include "../Units/CompositeUnit.h"
 #include <memory>
+#include <iostream>
 
 class Context;
 

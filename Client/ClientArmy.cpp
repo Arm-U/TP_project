@@ -2,6 +2,9 @@
 
 std::shared_ptr<CompositeUnit> ClientArmy::createLegion(int wNum, int aNum, int sNum) {
 	std::shared_ptr<CompositeUnit> legion = std::make_shared<CompositeUnit>();
+	if (legion->getCost() > points) {
+		throw std::runtime_error("Not enough points");
+	}
 	for (int i = 0; i < wNum; ++i) {
 		legion->add_unit(factory->CreateWarrior());
 	}
@@ -11,8 +14,6 @@ std::shared_ptr<CompositeUnit> ClientArmy::createLegion(int wNum, int aNum, int 
 	for (int i = 0; i < sNum; ++i) {
 		legion->add_unit(factory->CreateSwordsman());
 	}
-	if (legion->getCost() > points)
-		return;
 	setPoints(points - legion->getCost());
 	return legion;
 }

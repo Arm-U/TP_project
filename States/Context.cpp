@@ -27,11 +27,3 @@ void Context::Request3() {
 void Context::Request4() {
     state_->recovery(this);
 }
-
-void Context::setArmy(std::shared_ptr<CompositeUnit> new_army) {
-    army = new_army;
-}
-
-std::shared_ptr<CompositeUnit> Context::getArmy() const {
-    return army;
-}

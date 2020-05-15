@@ -3,6 +3,7 @@
 #include "../Factories/EnglandUnitFactory.h"
 #include "../Factories/FranceUnitFactory.h"
 #include "../Units/CompositeUnit.h"
+#include <iostream>
 
 class ClientArmy {
 public:
