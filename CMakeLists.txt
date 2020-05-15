@@ -14,7 +14,8 @@ set(SOURCES
 	States/State.cpp
 	States/Context.cpp
 	States/MartialState.cpp
-	States/EconomicState.cpp)
+	States/EconomicState.cpp
+	Client/ClientMain.cpp)
 
 set(HEADERS 
 	Units/Unit.h 
@@ -29,7 +30,8 @@ set(HEADERS
 	States/State.h
 	States/Context.h
 	States/MartialState.h
-	States/EconomicState.h)
+	States/EconomicState.h
+	Client/ClientMain.h)
 
 add_executable(mainfile ${SOURCES} ${HEADERS}  main.cpp)
 
