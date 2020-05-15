@@ -32,7 +32,7 @@ int main() {
 		else if (action == "recovery")
 			client->recovery();
 		else if (action == "stop") {
-			cout << "Thanks for game\n"
+			cout << "Thanks for game\n";
 			break;
 		}
 		else {
